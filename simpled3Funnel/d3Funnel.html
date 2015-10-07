@@ -1,0 +1,59 @@
+<html>
+<head>
+<!--[if lt IE 9]><script language="javascript" type="text/javascript" src="excanvas.js"></script><![endif]-->
+<script language="javascript" type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+<script src="d3-funnel-charts.js"></script>
+<title>d3 Funnel chart example</title>
+</head>
+<body>
+<div style="margin:20px auto;width:900px;">
+<div id="myFunnel"  style="height:400px;width:300px;">
+</div>
+</div>
+</body>
+<script type="text/javascript">
+
+var data = [["Leads",500],["Qualification",169],["Meeting",248],["Quote",162]];
+    var chart = new FunnelChart({
+                    data: data,
+                    width: 650, 
+                    height: 450, 
+                    bottomPct: 1/4
+                });
+    chart.draw('#myFunnel', 2);
+	
+/*
+var data = [["Leads",500],["Qualification",169],["Meeting",248],["Quote",162]];
+var funnelOptions = {
+	seriesDefaults: {
+		renderer:$.jqplot.FunnelRenderer,
+		rendererOptions:{
+             sectionMargin: 6,
+             widthRatio: .5,
+			 showDataLabels: true,
+			 dataLabels: 'value',
+			 dataLabelThreshold: 0,
+			 shadowOffset: 0
+		 }
+	},
+	legend: {
+		location: 's',
+		show: true,
+		renderer: $.jqplotFunnelLegendRenderer,
+		rendererOptions: {
+			numberRows: 2,
+			numberColumns: 2
+		},
+		border: 'none'
+	},
+	grid: {
+		shadow: false,
+		background: '#ffffff',
+		drawBorder: false
+	}
+};
+$.jqplot('myFunnel', [data] , funnelOptions);
+*/
+</script>
+</html>
